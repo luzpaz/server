@@ -119,9 +119,11 @@ class TemplateLayout extends \OC_Template {
 
 		} else if ($renderAs == 'error') {
 			parent::__construct('core', 'layout.guest', '', false);
+			\OC_Util::addStyle('guest');
 			$this->assign('bodyid', 'body-login');
 		} else if ($renderAs == 'guest') {
 			parent::__construct('core', 'layout.guest');
+			\OC_Util::addStyle('guest');
 			$this->assign('bodyid', 'body-login');
 		} else {
 			parent::__construct('core', 'layout.base');
