@@ -36,6 +36,7 @@ use OC\AppConfig;
 use OCP\App\AppPathNotFoundException;
 use OCP\App\IAppManager;
 use OCP\App\ManagerEvent;
+use OCP\IAppConfig;
 use OCP\ICacheFactory;
 use OCP\IGroupManager;
 use OCP\IUser;
@@ -94,7 +95,7 @@ class AppManager implements IAppManager {
 	 * @param EventDispatcherInterface $dispatcher
 	 */
 	public function __construct(IUserSession $userSession,
-								AppConfig $appConfig,
+								IAppConfig $appConfig = null,
 								IGroupManager $groupManager,
 								ICacheFactory $memCacheFactory,
 								EventDispatcherInterface $dispatcher) {
