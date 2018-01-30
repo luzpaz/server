@@ -726,7 +726,6 @@ class OC {
 		// Make sure that the application class is not loaded before the database is setup
 		if ($systemConfig->getValue("installed", false)) {
 			// Load settings application to make sure hooks are also cached when running occ
-			// FIXME: This should probably be moved somewhere else
 			$settings = new \OC\Settings\Application();
 			$settings->register();
 		}
